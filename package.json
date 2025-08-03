@@ -10,7 +10,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:nat-does-code": "node dist/nat-does-code/server/server.mjs",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "github-build": "ng build --configuration production --base-href 'https://wonderingfire.github.io/nat-does-code/'",
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/nat-does-code/browser --no-silent"
   },
   "lint-staged": {
     "src/**/*.{ts,html,scss}": [
@@ -50,6 +52,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",
+    "angular-cli-ghpages": "^2.0.3",
     "angular-eslint": "20.1.1",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.8",
