@@ -7,19 +7,13 @@
     "build": "ng build",
     "format": "prettier --write \"src/**/*.{ts,html,scss}\"",
     "lint": "ng lint",
+    "lint-fix": "eslint \"**/*.{ts,html,scss}\" --fix",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:nat-does-code": "node dist/nat-does-code/server/server.mjs",
     "prepare": "husky install",
     "github-build": "ng build --configuration production --base-href 'https://wonderingfire.github.io/nat-does-code/'",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/nat-does-code/browser --no-silent"
-  },
-  "lint-staged": {
-    "src/**/*.{ts,html,scss}": [
-      "prettier --write",
-      "ng lint",
-      "git add"
-    ]
   },
   "prettier": {
     "overrides": [
@@ -33,15 +27,18 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cdk": "^20.1.5",
     "@angular/common": "^20.1.0",
     "@angular/compiler": "^20.1.0",
     "@angular/core": "^20.1.0",
     "@angular/forms": "^20.1.0",
+    "@angular/material": "^20.1.5",
     "@angular/platform-browser": "^20.1.0",
     "@angular/platform-server": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@angular/ssr": "^20.1.4",
     "express": "^5.1.0",
+    "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -56,16 +53,16 @@
     "angular-eslint": "20.1.1",
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.3",
-    "husky": "^8.0.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^8.0.3",
     "jasmine-core": "~5.8.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "lint-staged": "^16.1.2",
-    "prettier": "3.6.2",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
     "typescript": "~5.8.2",
     "typescript-eslint": "8.34.1"
   }
